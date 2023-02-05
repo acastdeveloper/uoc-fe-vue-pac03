@@ -1,6 +1,6 @@
 import { getCache } from "./cache.js";
 let criterium = "";
-const pokeM = [...getCache()];
+const pokeM = getCache();
 let pokeMF = []; // Matriu d'elements filtrats
 let pokeMId = []; //Matriu de les Ids dels elements Filtrats
 let pokeTotesId = []; //Matriu de totes les ids
