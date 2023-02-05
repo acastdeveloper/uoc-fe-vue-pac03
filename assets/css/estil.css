@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+:root {
+    /* --c1: #f2f2f2; */
+    --c1: #ccc;
+    --c2: #7996;
+    --c3: #012;
+    --c4: #7994;
+    --c5: #0124;
+    --f1: 'Slackey', cursive;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body {
+    font-family: var(--f1);
+    font-size: .7rem;
+    color: var(--c3);
+    /* background: var(--c1); */
+    background: linear-gradient(var(--c1),var(--c4));
+    transition: all .3s ease-in-out;
+}
+
+body.dark, body[data-theme="dark"] {
+    color: var(--c1);
+    background: linear-gradient(var(--c3),var(--c5));
+}
+
+wrapp-er {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: auto;
+}
+
+intra-wrapp {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+bar-top,
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 2rem;
+    text-align: right;
+    /* background: var(--c2); */
+    background: linear-gradient(var(--c2),var(--c5), var(--c4));
+    box-shadow: 0 0 1rem var(--c3);
+}
+
+footer {
+    margin-top: auto;
+}
+
+#switcher {
+    display: inline-block;
+    position: absolute;
+    height: 10px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+#switcher-rail {
+    position: relative;
+    display: inline-block;
+    background: var(--c2);
+    border-radius: .5rem;
+    border-top: 1px solid var(--c3);
+    border-bottom: var(--c1);
+    width: 2rem;
+    height: 1rem;
+    cursor:pointer;
+    /* padding:.1rem; */
+}
+
+#ball {
+    height: .9rem;
+    width: .9rem;
+    border-radius: 50%;
+    border: 0;
+    transform: translateX(1.2rem) scale(110%);
+    background: var(--c1);
+    transition: all .2s linear;
+    box-shadow: 0 0 .5rem var(--c1);
+}
+
+#ball.dark {
+    border-left: 0;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-right: 3px solid var(--c1);
+    background: linear-gradient(var(--c2), var(--c3)), radial-gradient(var(--c2), var(--c3));
+    transform: translateX(0);
+}
+
+#pokeme-button {
+    border-radius: 1rem 2rem 3rem 4rem;
+    background: orange;
+    color: var(--c3);
+    font-weight: 900;
+    font-size: .8rem;
+    padding: .5rem;
+    box-shadow: 1px 1px 4px var(--c3);
+    cursor: pointer;
+    font-family: var(--f1);
+    transition: all .3s ease-in-out;
+}
+
+#pokeme-button:hover {
+    transform: scale(120%);
+}
+
+#cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items:flex-start;
+}
+
+.card {
+    position: relative;
+    /* background: linear-gradient(var(--c4),var(--c2), var(--c2), var(--c5), var(--c2)); */
+    background: var(--c4);
+    /* width: fit-content; */
+    height: fit-content;
+    padding: 1rem;
+    /* border-radius:.5rem; */
+    border-radius:6%;
+    border-top: .1rem solid var(--c1);
+    border-right: .1rem solid var(--c3);
+    border-left: .1rem solid var(--c1);
+    border-bottom: .1rem solid var(--c3);
+    transition: .3s all;
+    cursor:zoom-in;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* .card * {border:1px solid yellowgreen;} */
+
+.card:hover {
+    transform: scale(110%);
+}
+
+.card img {
+    filter:drop-shadow(0 0 1rem var(--c3));
+    width: fit-content;
+    background: linear-gradient(var(--c2), var(--c3)), radial-gradient(var(--c2), var(--c5), var(--c4));
+    border-radius: 50%;
+    border: solid var(--c1);
+    border-top: 2rem;
+    border-left: 4rem;
+    box-shadow: .2rem .2rem -.1rem .5rem var(--c5);
+}
+
+.card button {
+    margin: 1rem 0 .25rem 0;
+    padding: .5rem;
+    border-radius: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    background: var(--c5)
+}
+
+.card button:hover {
+    box-shadow: 0 0 .5rem orangered;
+}
+
+.card .nom {
+    padding: 1.3rem 0 .5rem 0;
+    text-transform: uppercase;
+    font-size: 1.2rem
+}
+
+#ampliar {
+    /* border: 1px solid red; */
+    /* display: none; */
+    display: flex;
+    /* PROVISIONALLY */
+    /* width: 45%; */
+    flex-grow: 1;
+    /* align-self: flex-start; */
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#ampliar button {
+    font-weight: bold;
+    background: orange;
+    align-self: flex-end;
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}
+
+.ocultar {
+    display: none;
+}
+
+/* #tancar, .darrera {display: none;} */
+
+#darrera {
+    position: relative;
+}
+.tancar {position: absolute; right: -2.5rem;}
+
+
+.mostrar {
+    display: block;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#tancar {
+    background:orange;
+    position: absolute;
+    right: -2rem;
+    top: -1rem;
+}
