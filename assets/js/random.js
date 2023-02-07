@@ -1,16 +1,17 @@
-export const laRandom = (total) => {
-    const maxPokes = total; // Número màxim de pokes (1008)
-    const matriuIdsPk = [];
-    const exemplars = 10;
-    let differentIds = 0;
-
+export const randM = (rang) => {
+    const set1 = new Set();
+    const total = 10;
     do {
-        matriuIdsPk.push(parseInt(Math.random() * maxPokes));
-        let setIdsPk = new Set(matriuIdsPk); //Set per evitar duplicats
-        differentIds = setIdsPk.size;
-    }
+        set1.add(parseInt(rang * Math.random()));
+    } while (set1.size < total)
 
-    while (differentIds < exemplars && matriuIdsPk.length < exemplars)
-    //Per evitar que accidentalment apareguin 11 he hagut de reforçar la condicional
-    return matriuIdsPk;
-};
+    return [...set1];
+}
+
+const main = () => {
+    console.log("main des de random.js ...");
+}
+
+const auto = (() => {
+    main();
+})();

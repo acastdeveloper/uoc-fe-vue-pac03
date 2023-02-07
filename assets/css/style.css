@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+@import url('./switcher.css'); /* Estil pel switcher */
+
+:root {
+    --darkc1: #333;
+    --darkc2: #3333;
+    --lightc1: #ddd;
+    --lightc2: #ddd3;
+    --middlec1: #663;
+    --middlec2: #6633;
+    --font1: 'Slackey', cursive;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font1);
+    font-size: .75rem;
+    min-height: 100vh;
+    background: linear-gradient(0deg, var(--lightc2),var(--lightc1));
+    color: var(--darkc1);
+}
+
+body[data-theme="dark"] {
+    background: linear-gradient(var(--darkc1), var(--middlec1), var(--middlec2));
+    color: var(--lightc1);
+}
+
+wrapp-er {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: var(--lightc2);
+}
+
+wrapp-er>header,
+wrapp-er>footer {
+    background: linear-gradient(var(--darkc2), var(--middlec2));
+    color: var(--darkc1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 0 .3rem var(--darkc1);
+}
+
+body[data-theme="dark"] wrapp-er>header {
+    background: linear-gradient(var(--darkc1),var(--middlec2),var(--darkc2),var(--darkc1));
+}
+
+wrapp-er>footer {
+    margin-top: auto;
+}
+
+intra-wrapp {
+    display: block;
+    width: 960px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+les-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: space-evenly;
+}
+
+la-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-start;
+    gap: .3rem;
+    border: .1rem solid var(--darkc2);
+    border-right: .5rem solid var(--darkc1);
+    border-radius: .3rem;
+    background: linear-gradient(0deg, var(--lightc2), var(--darkc2), var(--lightc2), var(--lightc1)), var(--middlec2);
+    box-shadow: 0 0 .6rem var(--darkc1);
+    padding: 1.5rem;
+    cursor: zoom-in;
+    transition: all .2s linear;
+    text-align: center;
+    z-index: 1;
+    font-size:.75rem;
+}
+
+la-card .nom {font-size: 1.5rem;
+text-shadow: -.1rem -.1rem 0rem var(--darkc2), -.1rem -.1rem 0rem var(--lightc2);
+}
+
+body[data-theme="dark"] la-card {
+    background: linear-gradient(var(--darkc2),var(--darkc1));
+}
+
+body[data-theme="dark"] la-card img {
+    background: linear-gradient(45deg,var(--darkc2),var(--lightc2)), radial-gradient(var(--darkc2),var(--lightc2));
+}
+
+la-card:hover {
+    transform: scale(102%) skewX(1deg) rotateY(1deg);
+    box-shadow: 0 0 1rem var(--lightc1);
+    z-index: 2;
+}
+
+la-card img {
+    background: linear-gradient(90deg, var(--darkc2), var(--lightc2)), linear-gradient(var(--lightc2), var(--lightc1));
+    border-radius: 50%;
+    border-top: .1rem solid var(--lightc1);
+    border-left: .2rem solid var(--lightc1);
+    border-bottom: .3rem solid var(--darkc1);
+    border-right: .4rem solid var(--darkc1);
+    box-shadow: 0 0 .6rem var(--darkc1);
+    width: 8rem;
+    transition: all .3s ease-in-out;
+}
+
+la-back {
+    /* display: block; */
+    display: none;
+    position: relative;
+}
+
+la-back>button {
+    position: absolute;
+    right: -.4rem;
+    top: -.3rem;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: .75rem;
+    background: orange;
+}
+
+#pokeme {
+    background: orange;
+    color: black;
+    padding: .5rem;
+    border-radius: 3rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+#pokeme:hover {
+    background: orangered;
+    color:white;
+}

@@ -1,10 +1,6 @@
-import {
-    getLocalPokes
-} from "./db.js";
-
-
+import { getCache } from "./cache.js";
 let criterium = "";
-const pokeM = getLocalPokes();
+const pokeM = getCache();
 let pokeMF = []; // Matriu d'elements filtrats
 let pokeMId = []; //Matriu de les Ids dels elements Filtrats
 let pokeTotesId = []; //Matriu de totes les ids
@@ -20,15 +16,15 @@ const getPokeId = () => {
 };
 
 const ocultarTotesCards = () => {
-    pokeTotesId.forEach(element => { document.querySelector(`la-card[id="#${element}"]`).style.display = "none" });
+    pokeTotesId.forEach(element => { document.querySelector(`section[data-id="#${element}"]`).style.display = "none" });
 };
 
 const mostrarTotesCards = () => {
-    pokeTotesId.forEach(element => { document.querySelector(`la-card[id="#${element}"]`).style.display = "flex" });
+    pokeTotesId.forEach(element => { document.querySelector(`section[data-id="#${element}"]`).style.display = "flex" });
 };
 
 const mostrarNomesFiltrades = () => {
-    pokeMId.forEach(element => { document.querySelector(`la-card[id="#${element}"]`).style.display = "flex" });
+    pokeMId.forEach(element => { document.querySelector(`section[data-id="#${element}"]`).style.display = "flex" });
 }
 
 
@@ -39,8 +35,8 @@ export const filtrar = () => {
 
 
 //INTERACTIVITAT
-document.querySelector("#filtre").addEventListener("keyup", () => {
-    criterium = document.querySelector("#filtre").value;
+document.querySelector("#filtradora").addEventListener("keyup", () => {
+    criterium = document.querySelector("#filtradora").value;
     console.log("FILTRE: " + criterium);
     iterar(criterium);
     console.log("ITERAR: ", iterar(criterium));

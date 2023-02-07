@@ -5,74 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAC03-POKEDEX</title>
-    <link rel="stylesheet" href="./assets/css/estil.css">
-
+    <title>POKEDEX - POKEAPI provatures</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/main.js" type="module"></script>
-    <script src="./assets/js/darkmode.js" defer></script>
 </head>
 
 <body>
-
-
     <wrapp-er>
         <header>
-            <bar-top>
-                <button id="pokeme-button">POKE ME!</button>
-                <input type="text" id="filtradora">
-                <label for="switcher" id="switcher-rail">
-                    <input type="checkbox" name="switcher" id="switcher">
-                    <div id="ball"></div>
-                </label>
-            </bar-top>
+            <button id="pokeme">Poke me!</button>
+            <input type="text" id="filtre">
+            <label for="switcher" id="tracker"><input type="checkbox" id="switcher">
+                <div id="ball"></div>
+            </label>
         </header>
         <intra-wrapp>
             <main>
-                <section id="cards">
-                </section>
+                <les-cards>
+
+                </les-cards>
             </main>
         </intra-wrapp>
-        <footer>lodesotadelapaginaenelficoengaelicanticilikegarlick
+        <footer>
+
         </footer>
     </wrapp-er>
 
-
-    <!-- TEMPLATES -->
-    <!-- <template id="poke-card">
-        <section class="card">
-            <button id="tancar-card">X</button>
-            <figure class="front" data-id="0">
-                <img src="" alt="" defer>
-                <figcaption></figcaption>
-                <section id="ampliar">
-                    <article class="tipus"></article>
-                    <article class="atac"></article>
-                    <article class="defensa"></article>
-                </section>
-            </figure>
-            <figure class="back">
-                <img src="" alt="">
-            </figure>
-        </section>
-    </template> -->
-
-    <template id="poke-card">
-        <section class="card" data-id="0">
-            <div class="card-row">
-                <figure class="front">
-                    <img src="" alt="">
-                    <article class="nom"></article>
-                </figure>
-                <figure class="darrera" id="darrera">
-                    <img src="" alt="">
-                    <article class="tipus"></article>
-                    <article class="atac"></article>
-                    <article class="defensa"></article>
-                    <button id="tancar">X</button>
-                </figure>
-            </div>
-
-        </section>
+    <template id="cardtemplate">
+        <la-card id="0">
+            <la-front>
+                <img src="./assets/img/815.png" alt="">
+                <article class="nom">Cinderace</article>
+            </la-front>
+            <la-back>
+                <img src="./assets/img/815back.png" alt="">
+                <article class="tipus">Tipus: fire</article>
+                <article class="atac">Atac: 116</article>
+                <article class="defensa">Defensa: 75</article>
+                <button id="tancar">X</button>
+            </la-back>
+        </la-card>
     </template>
 
 
